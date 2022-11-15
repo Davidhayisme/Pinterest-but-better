@@ -63,7 +63,7 @@
             <h1>Hidden Treasures</h1>
         </div>
         <ul>
-        <li><a href="#home">Home</a></li>
+        <li><a href="homePage.html">Home</a></li>
         <li style="float:right"><a class="active" href="#profile">Profile</a></li>
         <li style="float:right"><a class="active" href="#post">Post</a></li>
         <li style="float:right"><a class="active" href="#filter">Filter</a></li>
@@ -72,7 +72,7 @@
         <!--Test gallery-->
 
         <div class="gallery">
-            <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\azzuro.jpg">
+            <a target="_blank" href="postPage.html">
               <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\azzuro.jpg" alt="Azzuro" width="800" height="800">
             </a>
             

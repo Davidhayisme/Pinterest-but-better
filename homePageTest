@@ -65,7 +65,7 @@
         <ul>
         <li><a href="homePage.html">Home</a></li>
         <li style="float:right"><a class="active" href="#profile">Profile</a></li>
-        <li style="float:right"><a class="active" href="#post">Post</a></li>
+        <li style="float:right"><a class="active" href="posting.html">Post</a></li>
         <li style="float:right"><a class="active" href="#filter">Filter</a></li>
         </ul>
 

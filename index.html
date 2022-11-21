@@ -71,22 +71,21 @@
           });
           $imgData = file_get_contents($(document));
           $size = getimagesize($(document));
-          mysql_connect('actualtesting.cwqrcac9nt4i.us-east-1.rds.amazonaws.com', 'admin', "Pinterestbutbetter");
+          mysql_connect({
+                        host: 'actualtesting.cwqrcac9nt4i.us-east-1.rds.amazonaws.com',
+                        user: 'admin',
+                        password: 'Pinterestbutbetter',
+                        });
           mysql_select_db ("HiddenTreasures");
-          $sql = "INSERT INTO testblob
-              ( image_id , image_type ,image, image_size, image_name)
-              VALUES
-              ('', '{$size['mime']}', '{$imgData}', '{$size[3]}', 
-               '{$_FILES['userfile']['name']}')";
+          $sql = "INSERT INTO testblob( image_id , image_type ,image, image_size, image_name)VALUES('', '{$size['mime']}', '{$imgData}', '{$size[3]}','{$_FILES['userfile']['name']}')";
           mysql_query($sql);
-          You can display an image from the database in a web page with:
-          $link = mysql_connect("localhost", "username", "password");
-          mysql_select_db("testblob");
-          $sql = "SELECT image FROM testblob WHERE image_id=0";
-          $result = mysql_query("$sql");
-          header("Content-type: image/jpeg, image/png, image/giff");
-          echo mysql_result($result, 0);
-          mysql_close($link);
+            //   You can display an image from the database in a web page with:
+        //   $link = mysql_connect("localhost", "username", "password");
+        //   mysql_select_db("testblob");
+        //   $sql = "SELECT image FROM testblob WHERE image_id=0";
+        //   $result = mysql_query("$sql");
+        //   header("Content-type: image/jpeg, image/png, image/giff");
+        //   mysql_close($link);
         </script>
   </body>
 </html>

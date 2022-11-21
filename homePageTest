@@ -96,32 +96,32 @@
               <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg" alt="Mountains" width="800" height="800">
             </a>
           </div>
-          <script>
-             $(document).ready(function() {
-              let imagesPreview = function(input, placeToInsertImagePreview) {
-                if (input.files) {
-                  let filesAmount = input.files.length;
-                  for (i = 0; i < filesAmount; i++) {
-                    let reader = new FileReader();
-                    reader.onload = function(event) {
-                      $($.parseHTML("<img>"))
-                        .attr("src", event.target.result)
-                        .appendTo(placeToInsertImagePreview);
-                    };
-                    reader.readAsDataURL(input.files[i]);
-                  }
-                }
-              };
-              $("#input-files").on("change", function() {
-                imagesPreview(this, "div.preview-images");
-              });
-            });
-            $imgData = file_get_contents($(document));
-            $size = getimagesize($(document));
-            mysql_connect('actualtesting.cwqrcac9nt4i.us-east-1.rds.amazonaws.com', 'admin', "Pinterestbutbetter");
-            mysql_select_db ("HiddenTreasures");
-            $sql = "INSERT INTO testblob( image_id , image_type ,image, image_size, image_name)VALUES('', '{$size['mime']}', '{$imgData}', '{$size[3]}','{$_FILES['userfile']['name']}')";
-            mysql_query($sql);
-        </script>
+        <script>
+            $(document).ready(function() {
+             let imagesPreview = function(input, placeToInsertImagePreview) {
+               if (input.files) {
+                 let filesAmount = input.files.length;
+                 for (i = 0; i < filesAmount; i++) {
+                   let reader = new FileReader();
+                   reader.onload = function(event) {
+                     $($.parseHTML("<img>"))
+                       .attr("src", event.target.result)
+                       .appendTo(placeToInsertImagePreview);
+                   };
+                   reader.readAsDataURL(input.files[i]);
+                 }
+               }
+             };
+             $("#input-files").on("change", function() {
+               imagesPreview(this, "div.preview-images");
+             });
+           });
+           $imgData = file_get_contents($(document));
+           $size = getimagesize($(document));
+           mysql_connect('actualtesting.cwqrcac9nt4i.us-east-1.rds.amazonaws.com', 'admin', "Pinterestbutbetter");
+           mysql_select_db ("HiddenTreasures");
+           $sql = "INSERT INTO testblob( image_id , image_type ,image, image_size, image_name)VALUES('', '{$size['mime']}', '{$imgData}', '{$size[3]}','{$_FILES['userfile']['name']}')";
+           mysql_query($sql);
+       </script>    
     </body>  
 </html> 

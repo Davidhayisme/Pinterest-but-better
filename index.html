@@ -1,91 +1,79 @@
-</html>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Hidden treasures</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <style>
-      div.preview-images > img {
-        width: 30%;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 mt-3">
-          <h4>Hidden Treasures</h4>
-
-          <form
-            class="mt-4"
-            action="/upload"
-            method="POST"
-            enctype="multipart/form-data"
-          >
-            <div class="form-group">
-              <input
-                type="file"
-                name="file"
-                id="input-files"
-                class="form-control-file border"
-              />
-            </div>
-            <!-- <button type="submit" class="btn btn-primary">Post</button> -->
-          </form>
-        </div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="preview-images"></div>
-        </div>
-      </div>
-    </div>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script>
-          $(document).ready(function() {
-            let imagesPreview = function(input, placeToInsertImagePreview) {
-              if (input.files) {
-                let filesAmount = input.files.length;
-                for (i = 0; i < filesAmount; i++) {
-                  let reader = new FileReader();
-                  reader.onload = function(event) {
-                    $($.parseHTML("<img>"))
-                      .attr("src", event.target.result)
-                      .appendTo(placeToInsertImagePreview);
-                  };
-                  reader.readAsDataURL(input.files[i]);
-                }
-              }
-            };
-            $("#input-files").on("change", function() {
-              imagesPreview(this, "div.preview-images");
-            });
-          });
-          $imgData = file_get_contents($(document));
-          $size = getimagesize($(document));
-          mysql_connect({
-                        host: 'actualtesting.cwqrcac9nt4i.us-east-1.rds.amazonaws.com',
-                        user: 'admin',
-                        password: 'Pinterestbutbetter',
-                        });
-          mysql_select_db ("HiddenTreasures");
-          $sql = "INSERT INTO testblob( image_id , image_type ,image, image_size, image_name)VALUES('', '{$size['mime']}', '{$imgData}', '{$size[3]}','{$_FILES['userfile']['name']}')";
-          mysql_query($sql);
-            //   You can display an image from the database in a web page with:
-        //   $link = mysql_connect("localhost", "username", "password");
-        //   mysql_select_db("testblob");
-        //   $sql = "SELECT image FROM testblob WHERE image_id=0";
-        //   $result = mysql_query("$sql");
-        //   header("Content-type: image/jpeg, image/png, image/giff");
-        //   mysql_close($link);
-        </script>
-  </body>
+<html>
+    <head>
+        <title>
+            HiddenTreasures
+        </title>
+        <meta charset = "UTF-8">
+    </head>
+    <body>
+        <h1>
+            HiddenTreasures
+        </h1>
+        <form action = "process-form.php" method = "post">
+            <label for="name">Name</label>
+            <input type="name" id ="name" name = "name">
+            <label for="message">Description</label>
+            <textarea id = "message" name = "message"></textarea>
+            <label for="aesthetic">Aesthetic</label>
+            <select id="aesthetic" name = "aesthetic">
+                <option value = "1" selected>-------------------</option>
+                <option value = "2" >Y2K</option>
+                <option value = "3">90's</option>
+                <option value = "4" >80's</option>
+                <option value = "5">70's</option>
+                <option value = "6" >60's</option>
+                <option value = "7">50's</option>
+                <option value = "8" >40's</option>
+                <option value = "9">30's</option>
+                <option value = "10">20's</option>
+                <option value = "11">Skater</option>
+                <option value = "12">Punk</option>
+                <option value = "13" >Goth</option>
+                <option value = "14">Soft</option>
+                <option value = "15">Classy</option>
+                <option value = "16" >Grung</option>
+                <option value = "17">Cottagecore</option>
+                <option value = "18">Baddie</option>
+                <option value = "19" >Artsy</option>
+                <option value = "20">Soft</option>
+                <option value = "21">Classy</option>
+                <option value = "22">Acedemia</option>
+                <option value = "23">Nerdy</option>
+            </select>
+            <fieldset>
+                <legend>Post</legend>
+                <div id="content">
+                    <form method="POST" action="" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <input class="form-control" type="file" name="uploadfile" value="" />
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary" type="submit" name="upload">UPLOAD</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="display-image">
+                <?php
+                    $query = " select * from image ";
+                    $result = mysqli_query($db, $query);
+             
+                    while ($data = mysqli_fetch_assoc($result)) {
+                ?>
+                    <img src="./image/<?php echo $data['filename']; ?>">
+             
+                <?php
+                    }
+                ?>
+                </div>
+            </label>
+            </fieldset>
+            <label>
+                <input type="checkbox" name = "terms">
+                This information is accurate.
+            </label>
+            <br>
+            <button>Submit Post</button>
+        </form>
+    </body>
 </html>

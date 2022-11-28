@@ -1,0 +1,60 @@
+body{
+    margin: 100; 
+    padding: 0; 
+    font-family: montserrat; 
+    background-color: rgb(40, 96, 40);
+    background: linear-gradient(120deg, #bbdfcc, #d5c1de);
+    height: 1000px; 
+    overflow: hidden;
+   
+  background-size: cover;
+    display: inline-block;
+
+}
+.center{
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    background-color: rgb(49, 7, 51);
+    display: inline-block;
+
+}
+.center h1{
+    text-align: center;
+    padding: 0 0 30px 0;
+    border-bottom: 2px solid rgb(6, 47, 10);
+    display: inline-block;
+
+
+}
+.center form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+.center[type="text"],.center input[type="password"]{
+    border: 0; 
+    background: none;
+    display: inline-block;
+    margin: 24px;
+    text-align: center;
+    border: 3px solid green;
+    width: 220px;
+    outline: none;
+    border-radius: 30px;
+}
+
+.center input[type="submit"]{
+width: 280px;
+border-color: green;
+border: 0; 
+background: none;
+display: inline-block;
+margin: 24px;
+text-align: center;
+border: 3px solid green;
+width: 220px;
+outline: none;
+border-radius: 30px;
+}

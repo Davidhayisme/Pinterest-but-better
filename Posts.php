@@ -15,11 +15,12 @@ $conn = mysqli_connect($host,$username,$password,$dbname);
 if(mysqli_connect_errno()){
     die("Connection error: " . mysqli_connect_error());
 }
-$sql = "INSERT INTO demo (username,caption,aesthetic,file_name,store_name,location,rating) VALUES(?,?,?,?,?,?,?)";
+$sql = "INSERT INTO Posts (username,caption,aesthetic,file_name,store_name,location,rating) VALUES(?,?,?,?,?,?,?)";
 $stmt = mysqli_stmt_init($conn);
 if(! mysqli_stmt_prepare($stmt,$sql)){
     die(mysqli_error($conn));
 }
-mysqli_stmt_bind_param($stmt,"ssii", $username,$caption,$aesthetic,$file_name,$store_name,$location,$rating);
+//Problem is line 24
+mysqli_stmt_bind_param($stmt,"ssii", $username, $caption, $aesthetic, $file_name, $store_name, $location, $rating);
 mysqli_stmt_execute($stmt);
 echo "Record saved";

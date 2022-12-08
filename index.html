@@ -139,8 +139,8 @@
     
     <form action="Posts.php" method = "post">
         <div class="column">
-            <label for="file_name">Image:</label>
-            <input type="file" id="file_name" accept="image/jpeg, image/png, image/jpg">
+            <label for="file">Image:</label>
+            <input type="file" id="file" accept="image/jpeg, image/png, image/jpg">
             <div id="display_image"></div>
             <label for="caption">Caption:</label>
             <input type="text" id="caption" name="caption"><br><br>
@@ -148,7 +148,7 @@
             <input type="text" id="store_name" name="store_name"><br><br>
             <label for="location">Store Address:</label>
             <input type="text" id="location" name="location"><br><br>
-        </div> 
+        </div>
         <p>Store Rating out of 5:</p>
         <div class="parent">
             <input type="radio" id="one" name="rating" value="one">
@@ -164,20 +164,30 @@
         </div>
         <p></p>
 
-        <p>Tell us about your item (select all categories that apply)</p>
-        <input type="checkbox" id="cottagecore" name="aesthetic" value="cottagecore">
-        <label for="cottagecore">Cottagecore</label><br>
-        <input type="checkbox" id="y2k" name="aesthetic" value="y2k">
-        <label for="cottagecore">Y2K</label><br>
-        <input type="checkbox" id="academia" name="aesthetic" value="academia">
-        <label for="cottagecore">Academia</label><br>
-        <input type="checkbox" id="goth" name="aesthetic" value="goth">
-        <label for="cottagecore">Goth</label><br>
-
+        <label for="aesthetic_value">Aesthetic</label>
+        <select id="aesthetic_value" name = "aesthetic_value">
+            <option value = "1" selected>Indie</option>
+            <option value = "2">Grunge</option>
+            <option value = "3">Soft</option>
+            <option value = "4">Dark & light academia</option>
+            <option value = "5">Baddie</option>
+            <option value = "6">VISCO</option>
+            <option value = "7">EMO</option>
+            <option value = "8">Fairycore</option>
+            <option value = "9">Goth</option>
+            <option value = "10">Cottagecore</option>
+            <option value = "11">Y2K</option>
+            <option value = "12">90's</option>
+            <option value = "13">80's</option>
+            <option value = "14">70's</option>
+            <option value = "15">60's</option>
+            <option value = "16">50's</option>
+            <option value = "17">40's</option>        
+            <option value = "18">30's</option>
+            <option value = "19">20's</option>        
         <p></p>
-        <input type="submit" value="Submit">
+        <button type="submit" name="submit">Submit</button>
     </form>
-
     <script>
         const image_input = document.querySelector("#image_input");
 

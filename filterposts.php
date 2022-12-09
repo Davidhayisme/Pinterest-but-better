@@ -1,19 +1,20 @@
 <?php
 session_start();
 $conn = require __DIR__ . "/connection.php";
-$sql = "SELECT file_num FROM posts";
+$filternum = $_POST["filter"];
+echo "here";
+$sql = "SELECT file_num FROM posts WHERE aesthetic = '" . $filternum . "'";
+echo "     here";
 $result = mysqli_query($conn, $sql);
-//echo mysqli_num_rows($result);
-$_SESSION["photos"] = "";
-$amount = mysqli_num_rows($result);
+echo "    here";
 $otherarr = array();
+echo "    here";
 $num = 0;
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+    echo "here";
     $otherarr[$num] = $row["file_num"];
     $num++;
 }
 shuffle($otherarr);
 $_SESSION["photos"] = $otherarr;
-$_SESSION["thepost"] = "";
 header("Location: homePage.php");
-?>

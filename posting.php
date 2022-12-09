@@ -7,7 +7,6 @@ session_start();
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">   
 <style>
-        /* Header: Hidden Treasures */
         .header {
             background-color: #57427e;
             text-align: center;
@@ -19,8 +18,6 @@ session_start();
             font-size: 30px;
             font-family: "Sofia", sans-serif;
         }
-        
-        /* Formating for links */
         ul {
             list-style-type: none;
             margin: 0;
@@ -51,20 +48,16 @@ session_start();
         .active {
             background-color: #4D5F0F;
         }
-        
-        /* Header format */
         h2 {
             color: black;
             font-size: 25px;
             font-family: Georgia, serif;
         }
-         h3 {
+        a1:link {
             color: black;
-            font-size: 15px;
+            font-size: 20px;
             font-family: Georgia, serif;
         }
-        
-        /* image format */
         img {
             width: 200px;
             height: auto;
@@ -74,13 +67,35 @@ session_start();
             height: auto;
             border-radius: 50%;
         }   
-       
+        h3 {
+            color: black;
+            font-size: 15px;
+            font-family: Georgia, serif;
+        }
         div{
             padding-top: 10px;
             /*padding-bottom: 10px;*/
         }
+       
+        :root {
+            --username: JohnDoe22;
+        }
+
+        div.gallery {
+            margin: 20px 10px 10px 10px;
+            float: left;
+            width: 180px;
+        }
+
+        div.gallery:hover {
+            opacity: 0.6;
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
         
-        /* Display the image uploaded */
         #display_image{
         width: 300px;
         height: 195px;
@@ -95,14 +110,13 @@ session_start();
             font-family: Georgia, serif;
             padding-top: 10px;
         } 
-        
-        /* Format for the form */
         .column {
             float: left;
             width: 50%;
             padding: 15px;
         }
 
+        
         .row:after {
             content: "";
             display: table;
@@ -112,38 +126,32 @@ session_start();
 </head>
 
 <body>
-    <!-- create header and navigation tab -->
     <div class="header">
         <h1>Hidden Treasures</h1>
     </div>
     <ul>
-    <!-- links for the tabs -->
     <li><a href="preHomePage.php">Home</a></li>
     <li style="float:right"><a class="active" href="profile.php">Profile</a></li>
     <li style="float:right"><a class="active" href="posting.php">Post</a></li>
-    <li style="float:right"><a class="active" href="#filter">Filter</a></li>
     </ul>
     
-    <!-- header -->
     <div class="parent">
         <h2>Create New Post</h2>
     </div>
     
-    <!-- Form for posting -->
     <form action="Posts.php" method = "post" enctype = "multipart/form-data">
         <div class="column">
-            <label for="file">Image:</label>    <!-- upload image -->
+            <label for="file">Image:</label>
             <input type="file" id="file" name="file">
             <div id="display_image"></div>
-            <label for="caption">Caption:</label>       <!-- upload caption -->
+            <label for="caption">Caption:</label>
             <input type="text" id="caption" name="caption"><br><br>
-            <label for="store_name">Store Name:</label>         <!-- upload store name -->
+            <label for="store_name">Store Name:</label>
             <input type="text" id="store_name" name="store_name"><br><br>
-            <label for="location">Store Address:</label>        <!-- upload store address -->
+            <label for="location">Store Address:</label>
             <input type="text" id="location" name="location"><br><br>
         </div>
         <p>Store Rating out of 5:</p>
-        <!-- input store rating -->
         <div class="parent">
             <input type="radio" id="one" name="rating" value="one">
             <label for="one">1</label><br>
@@ -157,7 +165,6 @@ session_start();
             <label for="five">5</label><br>
         </div>
         <p></p>
-        <!-- select aesthetic from dropdown -->
         <label for="aesthetic">Aesthetic</label>
         <select id="aesthetic" name = "aesthetic">
             <option value = "1" selected>ALL</option>
@@ -181,8 +188,21 @@ session_start();
             <option value = "19">30's</option>
             <option value = "20">20's</option></select>
             <p></p>
-            <!-- submit button -->
         <button type="submit" name="submit">Submit</button>
     </form>
+    <script>
+        /*
+        const image_input = document.querySelector("#image_input");
+
+        image_input.addEventListener("change", function() {
+        const file_reader = new FileReader();
+        file_reader.addEventListener("load", () => {
+            const uploaded_image = file_reader.result;
+            document.querySelector("#display_image").style.backgroundImage = `url(${uploaded_image})`;
+        });
+        file_reader.readAsDataURL(this.files[0]);
+        });
+        */
+    </script>
 </body>
 </html>

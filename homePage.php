@@ -2,10 +2,6 @@
 <?php
 session_start();
 $pho = $_SESSION["photos"];
-print_r($_SESSION);
-if($_SESSION["yea"] == 1){
-    $_SESSION["lmao"] = "worked";
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -110,7 +106,25 @@ if($_SESSION["yea"] == 1){
         }
         .button{
             border: none;
+            background-color: #52554a;
+            color: white;
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            font-family: Georgia, serif;
+            font-size: 16px;
+            width: 100%;
         }
+        .button:hover{
+            background-color: #4D5F0F;
+        }
+        .button1{
+            border: none;
+            background-color: white;
+            
+        }
+
     
     </style>
     </head>
@@ -130,34 +144,144 @@ if($_SESSION["yea"] == 1){
         </div>
         <ul>
         <li><a href="preHomePage.php">Home</a></li>
-        <li style="float:right"><a class="active" href="profile.php">Profile</a></li>
+        <li style="float:right"><a class="active" href="profile_posts.php">Profile</a></li>
         <li style="float:right"><a class="active" href="posting.php">Post</a></li>
         <li style="float:right" class="filter">
+        <form action = "filterposts.php" method="post">
             <a href="javascript:void(0)" class="dropbtn">Aesthetic</a>
             <div class="filter-content">
-              <a href="#">Cottagecore</a>
-              <a href="#">Y2K</a>
-              <a href="#">Academia</a>
-              <a href="#">Goth</a>
+            <button class = "button" type = submit>
+              <input class = "button" type=button value="Indie">
+              <input type="hidden" name="filter" value="2">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="Grunge">
+              <input type="hidden" name="filter" value="3">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="Soft">
+              <input type="hidden" name="filter" value="4">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="Dark & light academia">
+              <input type="hidden" name="filter" value="5">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="Baddie">
+              <input type="hidden" name="filter" value="6">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="VISCO">
+              <input type="hidden" name="filter" value="7">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="EMO">
+              <input type="hidden" name="filter" value="8">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="Fairycore">
+              <input type="hidden" name="filter" value="9">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="Goth">
+              <input type="hidden" name="filter" value="10">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="Cottagecore">
+              <input type="hidden" name="filter" value="11">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="Y2K">
+              <input type="hidden" name="filter" value="12">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="90's">
+              <input type="hidden" name="filter" value="13">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="80's">
+              <input type="hidden" name="filter" value="14">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="70's">
+              <input type="hidden" name="filter" value="15">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="60's">
+              <input type="hidden" name="filter" value="16">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="50's">
+              <input type="hidden" name="filter" value="17">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="40's">
+              <input type="hidden" name="filter" value="18">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="30's">
+              <input type="hidden" name="filter" value="19">
+              </button>
+        </form>
+        <form action = "filterposts.php" method="post">
+              <button class = "button" type = submit>
+              <input class = "button" type=button value="20's">
+              <input type="hidden" name="filter2" value="20">
+              </button>
             </div>
+        </form>
         </li>
         </ul>
     <div class="row"> 
       <div class="column">
         <form action="thepost.php" method="post">
-            <button type = submit>
+            <button class = "button1">
           <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
           <input type="hidden" name="photo" value="0">
         </button>
         </form>
         <form action="thepost.php" method="post">
-            <button type = submit>
+            <button class = "button1">
           <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
           <input type="hidden" name="photo" value="1">
         </button>
         </form>
         <form action="thepost.php" method="post">
-            <button type = submit>
+            <button class = "button1">
           <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
           <input type="hidden" name="photo" value="2">
         </button>
@@ -168,9 +292,12 @@ if($_SESSION["yea"] == 1){
           for (i = 0; i < 3; i++){
             //console.log("Photos/" + src[i]);
             //var src = 'C:/Users/audre/OneDrive/College/Year 3/Software Engineering/images/photo' + i + '.jpg';
-
-            console.log(src[i]);
-            document.getElementById("test").src = "Photos/" + src[i];
+            if(src[i] != null){
+                    document.getElementById("test").src = "Photos/" + src[i];
+                }
+                else{
+                    document.getElementById("test").src = "Default/white.PNG";
+                }
             //var newID = "\"" + i + "\"";
             var newID = "jeff"+i;
             document.getElementById("test").id = newID;
@@ -180,19 +307,19 @@ if($_SESSION["yea"] == 1){
       </div>
       <div class="column">
       <form action="thepost.php" method="post">
-            <button type = submit>
+        <button class = "button1">
           <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
           <input type="hidden" name="photo" value="3">
         </button>
         </form>
         <form action="thepost.php" method="post">
-            <button type = submit>
+        <button class = "button1">
           <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
           <input type="hidden" name="photo" value="4">
         </button>
         </form>
         <form action="thepost.php" method="post">
-            <button type = submit>
+        <button class = "button1">
           <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
           <input type="hidden" name="photo" value="5">
         </button>
@@ -206,7 +333,13 @@ if($_SESSION["yea"] == 1){
             for (i = 3; i < 6; i++) {
                 console.log(src[i]);
                 //var src = 'C:/Users/audre/OneDrive/College/Year 3/Software Engineering/images/photo' + i + '.jpg';
-                document.getElementById("test").src = "Photos/" + src[i];
+                if(src[i] != null){
+                    document.getElementById("test").src = "Photos/" + src[i];
+                }
+                else{
+                    document.getElementById("test").src = "Default/white.PNG";
+                }
+                //document.getElementById("test").src = "Photos/" + src[i];
                 var newID = "\"" + i + "\"";
                 document.getElementById("test").id = newID;
             }
@@ -214,19 +347,19 @@ if($_SESSION["yea"] == 1){
       </div>
       <div class="column">
       <form action="thepost.php" method="post">
-            <button type = submit>
+      <button class = "button1">
           <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
           <input type="hidden" name="photo" value="6">
         </button>
         </form>
         <form action="thepost.php" method="post">
-            <button type = submit>
+        <button class = "button1">
           <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
           <input type="hidden" name="photo" value="7">
         </button>
         </form>
         <form action="thepost.php" method="post">
-            <button type = submit>
+        <button class = "button1">
           <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
           <input type="hidden" name="photo" value="8">
         </button>
@@ -235,7 +368,12 @@ if($_SESSION["yea"] == 1){
         <script>
             var src = <?php echo json_encode($pho);?>;
             for (i = 6; i < 9; i++) {
-                document.getElementById("test").src = "Photos/" + src[i];
+                if(src[i] != null){
+                    document.getElementById("test").src = "Photos/" + src[i];
+                }
+                else{
+                    document.getElementById("test").src = "Default/white.PNG";
+                }
                 var newID = "\"" + i + "\"";
                 document.getElementById("test").id = newID;
           }
@@ -243,19 +381,19 @@ if($_SESSION["yea"] == 1){
       </div>
       <div class="column">
       <form action="thepost.php" method="post">
-            <button type = submit>
+      <button class = "button1">
           <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
           <input type="hidden" name="photo" value="9">
         </button>
         </form>
         <form action="thepost.php" method="post">
-            <button type = submit>
+        <button class = "button1">
           <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
           <input type="hidden" name="photo" value="10">
         </button>
         </form>
         <form action="thepost.php" method="post">
-            <button type = submit>
+        <button class = "button1">
           <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
           <input type="hidden" name="photo" value="11">
         </button>
@@ -267,8 +405,12 @@ if($_SESSION["yea"] == 1){
             var src = <?php echo json_encode($pho);?>;
             console.log(src.length);
             for (i = 9; i < 12; i++) {
-
-            document.getElementById("test").src = "Photos/" + src[i];
+                if(src[i] != null){
+                    document.getElementById("test").src = "Photos/" + src[i];
+                }
+                else{
+                    document.getElementById("test").src = "Default/white.PNG";
+                }
             var newID = "\"" + i + "\"";
             document.getElementById("test").id = newID;
           }

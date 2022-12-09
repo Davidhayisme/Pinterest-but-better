@@ -3,7 +3,6 @@ session_start();
 $conn = require __DIR__ . "/connection.php";
 //$username = $_POST["username"];
 //$password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-echo "CRAM ";
 
 if(isset($_POST['username']) && isset($_POST['password'])){
     function validate($data){
@@ -18,10 +17,8 @@ $passwrd = md5($_POST["password"]);
 $sql = "SELECT * FROM user WHERE password='".$passwrd."' AND username = '".$uname."'";
 $result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result) === 1){
-    $ahh = array("AHHHH", "huh", "imagine");
     $row = mysqli_fetch_assoc($result);
     if($row["username"] === $uname && $row["password"] === $passwrd){
-        echo "Logged In!";
         $_SESSION["username"] = $row["username"];
         $_SESSION["password"] = $row["password"];
         $_SESSION["bio"] = $row["bio"];

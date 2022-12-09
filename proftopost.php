@@ -2,7 +2,7 @@
 session_start();
 $conn = require __DIR__ . "/connection.php";
 $tempnum = $_POST["photo"];
-$imgarr = $_SESSION["photos"];
+$imgarr = $_SESSION["uphotos"];
 $filenum = $imgarr[$tempnum];
 $sql = "SELECT * FROM posts WHERE file_num= '" . $filenum . "'";
 $result = mysqli_query($conn, $sql);
@@ -17,4 +17,3 @@ if(mysqli_num_rows($result) === 1){
 else{
     print_r($_POST);
 }
-

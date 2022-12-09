@@ -1,5 +1,4 @@
 <?php
-//Connects to database
 $host = "actualtesting.cwqrcac9nt4i.us-east-1.rds.amazonaws.com";
                 $dbname = "images";
                 $usernames = "admin";

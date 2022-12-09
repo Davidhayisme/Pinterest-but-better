@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"> 
 <style>
+        /* Header format */
         h1 {
             color: #eeeeee;
             font-size: 30px;
@@ -20,10 +21,13 @@
             padding: 60px;
         }
 
+        /* Label format */
         label {
             font-family: Georgia, serif;
             font-size: 20px;
         }
+        
+        /* Input format */
         input[type=text], input[type=password], input[type=email],select {
             font-family: Georgia, serif;
             font-size: 20px;
@@ -77,16 +81,18 @@
 </head>
 
 <body>
-
+        
+<!-- Header -->
 <h1>Hidden Treasures</h1>
     <div>
+        <!-- Form for login -->
         <form method="POST" action="login.php">
-            <label for="username">Username:</label>
+            <label for="username">Username:</label>     <!-- Upload username -->
             <input type="text" id="username" name="username" placeholder="Username :D"><br>
-            <label for="password">Password:</label>
+            <label for="password">Password:</label>     <!-- Upload password -->
             <input type="password" id="password" name="password" placeholder="Password please!" ><br>
-            <button> Log in </button>
-            <p> Don't have an account? <a href="accountcreation.php"> Create Account! </a>
+            <button> Log in </button>   <!-- login submit button -->
+            <p> Don't have an account? <a href="accountcreation.php"> Create Account! </a>      <!-- button to create new account -->
         </form>
     </div>
     

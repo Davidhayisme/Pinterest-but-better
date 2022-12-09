@@ -7,6 +7,7 @@ session_start();
     <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">    
         <style>
+        /* Header: Hidden Treasures */
         .header {
             background-color: #57427e;
             text-align: center;
@@ -18,6 +19,8 @@ session_start();
             font-size: 30px;
             font-family: "Sofia", sans-serif;
         }
+        
+        /* Format for links */
         ul {
             list-style-type: none;
             margin: 0;
@@ -54,14 +57,12 @@ session_start();
         .active {
             background-color: #4D5F0F;
         }
+        
+        /* Header format */
         h2 {
             color: black;
             font-size: 25px;
             font-family: Georgia, serif;
-        }
-        img {
-            width: 500px;
-            height: auto;
         }
         h3 {
             color: black;
@@ -69,12 +70,20 @@ session_start();
             font-family: Georgia, serif;
             text-decoration: none;
         }
+        
+        /* Image format */
+        img {
+            width: 500px;
+            height: auto;
+        }
+        
         :root {
             --username: JohnDoe22;
         }
         </style>
     </head>
     <body>
+        <!-- create header and navigation tab -->
         <div class="header">
             <h1>Hidden Treasures</h1>
         </div>
@@ -86,6 +95,7 @@ session_start();
         </ul>
 
     </body> 
+    <!-- username variable -->
     <a class="one" href="userPage.html"><p id="demo"></p></a>
     <h1><?php echo $_SESSION["pusername"];?><h1> 
     <a class="one" href="storePage.html"><h3><?php echo $_SESSION["pstorename"]?></h3></a>

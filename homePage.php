@@ -267,6 +267,7 @@ if($_SESSION["yea"] == 1){
             var src = <?php echo json_encode($pho);?>;
             console.log(src.length);
             for (i = 9; i < 12; i++) {
+
             document.getElementById("test").src = "Photos/" + src[i];
             var newID = "\"" + i + "\"";
             document.getElementById("test").id = newID;

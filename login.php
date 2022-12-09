@@ -18,6 +18,7 @@ $passwrd = md5($_POST["password"]);
 $sql = "SELECT * FROM user WHERE password='".$passwrd."' AND username = '".$uname."'";
 $result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result) === 1){
+    $ahh = array("AHHHH", "huh", "imagine");
     $row = mysqli_fetch_assoc($result);
     if($row["username"] === $uname && $row["password"] === $passwrd){
         echo "Logged In!";

@@ -100,7 +100,28 @@ session_start();
         .row:after {
             content: "";
             display: table;
-            clear: both;
+            cl
+            ear: both;
+        }
+        .center h1 {
+            
+            text-align: center;
+            padding: 20px;
+            
+        }
+        .center{
+          text-align: center;
+          width: 200px; 
+          border: 4px;
+          border-color: black;
+          padding: 10px 10px;
+        }
+        textarea{
+          text-align: center;
+          height: 50px;
+          width: 99%;
+          border-color: rgb(10, 94, 10);
+
         }
 </style>
 </head>
@@ -174,7 +195,22 @@ session_start();
             <option value = "19">30's</option>
             <option value = "20">20's</option></select>
             <p></p>
+            <form method = "post">
+                
+                <br>
+                
+                <br>
+                <textarea placeholder="comments"></textarea>
+                <div class = "btn">
+                  <input type="submit" value='Comment' id = "submit">
+                  <h3 id ="submit" onclick="myFunction()"></h3>
+                </div>
+                
+        </form>
+        
         <button type="submit" name="submit">Submit</button> <!-- submit button -->
-    </form>
+        
+       </form>
+       
 </body>
 </html>

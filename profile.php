@@ -7,6 +7,7 @@ $uphotos = $_SESSION["uphotos"];
     <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">    
         <style>
+            /* Header: Hidden Treasures */
         .header {
             background-color: #57427e;
             text-align: center;
@@ -18,6 +19,8 @@ $uphotos = $_SESSION["uphotos"];
             font-size: 30px;
             font-family: "Sofia", sans-serif;
         }
+
+        /* format for links */
         ul {
             list-style-type: none;
             margin: 0;
@@ -48,26 +51,13 @@ $uphotos = $_SESSION["uphotos"];
         .active {
             background-color: #4D5F0F;
         }
+
+        /* header format */
         h2 {
             color: black;
             font-size: 25px;
             font-family: Georgia, serif;
         }
-        a1:link {
-            color: black;
-            font-size: 20px;
-            font-family: Georgia, serif;
-            text-decoration: none;
-        }
-        img {
-            width: 200px;
-            height: auto;
-        }   
-        img.one {
-            width: 200px;
-            height: auto;
-            border-radius: 50%;
-        }   
         h3 {
             color: black;
             font-size: 15px;
@@ -83,6 +73,19 @@ $uphotos = $_SESSION["uphotos"];
             font-size: 15px;
             font-family: Georgia, serif;
         }
+        
+        /* image format */
+        img {
+            width: 200px;
+            height: auto;
+        }   
+        img.one {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+        }   
+        
+        
         div1{
             padding-top: 30px;
             padding-left: 30px;
@@ -91,10 +94,9 @@ $uphotos = $_SESSION["uphotos"];
             padding-top: 50px;
             padding-left: 30px;
         }
-        :root {
-            --username: JohnDoe22;
-        }
-
+        
+        
+        /* Gallery format */
         div.gallery {
             margin: 20px 10px 10px 10px;
             float: left;
@@ -127,26 +129,31 @@ $uphotos = $_SESSION["uphotos"];
         </style>
     </head>
     <body>
+        <!-- create header and navigation tab -->
         <div class="header">
             <h1>Hidden Treasures</h1>
         </div>
         <ul>
+            <!-- links for the tabs -->
         <li><a href="homePage.php">Home</a></li>
         <li style="float:right"><a class="active" href="profile.php">Profile</a></li>
         <li style="float:right"><a class="active" href="posting.php">Post</a></li>
         </ul>
         <div1 class="parent">
+            <!-- get profile photo using php -->
             <img class="one" src="ProfPhotos/<?=$_SESSION["profile_photo"]?>" alt="profilePic" width="500" height="500">
             <div1>
-                <p><?php echo $_SESSION["username"];?></p> 
-                <a class="one" href="editProfile.php"><h3>Edit Profile</h3></a>
-                <p><?php echo $_SESSION["bio"];?></p>   
+                <p><?php echo $_SESSION["username"];?></p>  <!-- get username -->
+                <a class="one" href="editProfile.php"><h3>Edit Profile</h3></a> <!-- link to edit profile -->
+                <p><?php echo $_SESSION["bio"];?></p>   <!-- link to bio -->
             </div1>
         </div1>
+        <!-- header -->
         <div2 class="parent">
             <h2>Posts</h2>
         </div2>
 
+        <!-- gallery to display user posts -->
         <div class="gallery">
         <form action="proftopost.php" method="post">
             <button type = submit>
@@ -184,12 +191,7 @@ $uphotos = $_SESSION["uphotos"];
     </form>
           </div>
 
-    
-
     </body> 
-    
-    
-     
     
     
 </html> 

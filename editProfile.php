@@ -8,6 +8,7 @@ print_r($_SESSION);
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">   
 <style>
+        /* Header: Hidden Treasures */
         .header {
             background-color: #57427e;
             text-align: center;
@@ -19,6 +20,7 @@ print_r($_SESSION);
             font-size: 30px;
             font-family: "Sofia", sans-serif;
         }
+        /* Formating for links */
         ul {
             list-style-type: none;
             margin: 0;
@@ -49,44 +51,28 @@ print_r($_SESSION);
         .active {
             background-color: #4D5F0F;
         }
+        /* Header format */
         h2 {
             color: black;
             font-size: 25px;
             font-family: Georgia, serif;
         }
-        a1:link {
-            color: black;
-            font-size: 20px;
-            font-family: Georgia, serif;
-        }
-        img {
-            width: 200px;
-            height: auto;
-        }   
-        img.one {
-            width: 200px;
-            height: auto;
-            border-radius: 50%;
-        }   
         h3 {
             color: black;
             font-size: 15px;
             font-family: Georgia, serif;
         }
+        
+        /* Image format */
+        img {
+            width: 200px;
+            height: auto;
+        }   
+          
+        
         div{
             padding-top: 10px;
             padding-bottom: 10px;
-        }
-        div1{
-            padding-top: 10px;
-            padding-left: 10px;
-        }
-        div2{
-            padding-top: 50px;
-            padding-left: 30px;
-        }
-        :root {
-            --username: JohnDoe22;
         }
 
         div.gallery {
@@ -94,16 +80,8 @@ print_r($_SESSION);
             float: left;
             width: 180px;
         }
-
-        div.gallery:hover {
-            opacity: 0.6;
-        }
-
-        div.gallery img {
-            width: 100%;
-            height: auto;
-        }
         
+        /* Display image when uploaded */
         #display_image{
         width: 300px;
         height: 195px;
@@ -121,41 +99,32 @@ print_r($_SESSION);
 </head>
 
 <body>
+    <!-- create header and navigation tab -->
     <div class="header">
         <h1>Hidden Treasures</h1>
     </div>
     <ul>
+    <!-- link each tab to another part of the webpage -->
     <li><a href="preHomePage.php">Home</a></li>
     <li style="float:right"><a class="active" href="profile.php">Profile</a></li>
     <li style="float:right"><a class="active" href="posting.php">Post</a></li>
     <li style="float:right"><a class="active" href="#filter">Filter</a></li>
     </ul>
 
+    <!-- Title header -->
     <div class="parent">
         <h2>Edit Profile</h2>
     </div>
 
+    <!-- Form to update profile -->    
     <form action="editing.php" method="post" enctype = "multipart/form-data">
+            <!-- Upload image -->
         <label for="image">Profile Picture:</label>
         <input type="file" id="image_input" name="file">
-        <div id="display_image"></div>
-        <label for="bio">Bio:</label>
+        <div id="display_image"></div>  <!-- Display image -->
+        <label for="bio">Bio:</label>   <!-- Input bio -->
         <input type="text" id="bio" name="bio"><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit">    <!-- Submit button -->
     </form>
     
-    <script>
-        /*
-        const image_input = document.querySelector("#image_input");
-
-        image_input.addEventListener("change", function() {
-        const file_reader = new FileReader();
-        file_reader.addEventListener("load", () => {
-            const uploaded_image = file_reader.result;
-            document.querySelector("#display_image").style.backgroundImage = `url(${uploaded_image})`;
-        });
-        file_reader.readAsDataURL(this.files[0]);
-        });
-        */
-    </script>
 </body>

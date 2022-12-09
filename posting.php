@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -130,9 +130,9 @@
         <h1>Hidden Treasures</h1>
     </div>
     <ul>
-    <li><a href="homePage.php">Home</a></li>
-    <li style="float:right"><a class="active" href="userProfile.html">Profile</a></li>
-    <li style="float:right"><a class="active" href="posting.html">Post</a></li>
+    <li><a href="preHomePage.php">Home</a></li>
+    <li style="float:right"><a class="active" href="profile.php">Profile</a></li>
+    <li style="float:right"><a class="active" href="posting.php">Post</a></li>
     <li style="float:right"><a class="active" href="#filter">Filter</a></li>
     </ul>
     
@@ -140,17 +140,17 @@
         <h2>Create New Post</h2>
     </div>
     
-    <form action="posts.php" method = "post">
+    <form action="Posts.php" method = "post" enctype = "multipart/form-data">
         <div class="column">
-            <label for="image">Image:</label>
-            <input type="file" id="image_input" accept="image/jpeg, image/png, image/jpg">
+            <label for="file">Image:</label>
+            <input type="file" id="file" name="file">
             <div id="display_image"></div>
             <label for="caption">Caption:</label>
             <input type="text" id="caption" name="caption"><br><br>
-            <label for="sname">Store Name:</label>
-            <input type="text" id="sname" name="sname"><br><br>
-            <label for="address">Store Address:</label>
-            <input type="text" id="address" name="address"><br><br>
+            <label for="store_name">Store Name:</label>
+            <input type="text" id="store_name" name="store_name"><br><br>
+            <label for="location">Store Address:</label>
+            <input type="text" id="location" name="location"><br><br>
         </div>
         <p>Store Rating out of 5:</p>
         <div class="parent">
@@ -166,22 +166,33 @@
             <label for="five">5</label><br>
         </div>
         <p></p>
-
-        <p>Tell us about your item (select all categories that apply)</p>
-        <input type="checkbox" id="cottagecore" name="category" value="cottagecore">
-        <label for="cottagecore">Cottagecore</label><br>
-        <input type="checkbox" id="y2k" name="category" value="y2k">
-        <label for="cottagecore">Y2K</label><br>
-        <input type="checkbox" id="academia" name="category" value="academia">
-        <label for="cottagecore">Academia</label><br>
-        <input type="checkbox" id="goth" name="category" value="goth">
-        <label for="cottagecore">Goth</label><br>
-
-        <p></p>
-        <input type="submit" value="Submit">
+        <label for="aesthetic">Aesthetic</label>
+        <select id="aesthetic" name = "aesthetic">
+            <option value = "1" selected>ALL</option>
+            <option value = "2">Indie</option>
+            <option value = "3">Grunge</option>
+            <option value = "4">Soft</option>
+            <option value = "5">Dark & light academia</option>
+            <option value = "6">Baddie</option>
+            <option value = "7">VISCO</option>
+            <option value = "8">EMO</option>
+            <option value = "9">Fairycore</option>
+            <option value = "10">Goth</option>
+            <option value = "11">Cottagecore</option>
+            <option value = "12">Y2K</option>
+            <option value = "13">90's</option>
+            <option value = "14">80's</option>
+            <option value = "15">70's</option>
+            <option value = "16">60's</option>
+            <option value = "17">50's</option>
+            <option value = "18">40's</option>        
+            <option value = "19">30's</option>
+            <option value = "20">20's</option></select>
+            <p></p>
+        <button type="submit" name="submit">Submit</button>
     </form>
-
     <script>
+        /*
         const image_input = document.querySelector("#image_input");
 
         image_input.addEventListener("change", function() {
@@ -192,6 +203,7 @@
         });
         file_reader.readAsDataURL(this.files[0]);
         });
+        */
     </script>
 </body>
 </html>

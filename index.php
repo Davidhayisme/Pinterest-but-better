@@ -9,7 +9,7 @@
             font-size: 30px;
             font-family: "Sofia", sans-serif;
             text-align: center;
-            padding: 20px;
+            padding: 30px;
         }
 
         h2 {
@@ -89,8 +89,6 @@
             <p> Don't have an account? <a href="accountcreation.php"> Create Account! </a>
         </form>
     </div>
-    <h2> Log In Page </h2>
-    <h2>Logo Here</h2>
     
 </body>
 </html>

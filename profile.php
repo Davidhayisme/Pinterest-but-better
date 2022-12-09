@@ -118,7 +118,7 @@ print_r($_SESSION);
         <ul>
         <li><a href="homePage.php">Home</a></li>
         <li style="float:right"><a class="active" href="profile.php">Profile</a></li>
-        <li style="float:right"><a class="active" href="posting.html">Post</a></li>
+        <li style="float:right"><a class="active" href="posting.php">Post</a></li>
         <li style="float:right"><a class="active" href="#filter">Filter</a></li>
         </ul>
         <div1 class="parent">

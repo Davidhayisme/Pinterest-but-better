@@ -71,26 +71,6 @@ session_start();
         :root {
             --username: JohnDoe22;
         }
-        .center h1 {
-            
-            text-align: center;
-            padding: 20px;
-            font-family: "Sofia", sans-serif;
-        }
-        .center{
-          text-align: center;
-          width: 200px; 
-          border: 4px;
-          border-color: black;
-          padding: 10px 10px;
-        }
-        textarea{
-          text-align: center;
-          height: 50px;
-          width: 99%;
-          border-color: rgb(10, 94, 10);
-
-        }
         </style>
     </head>
     <body>
@@ -98,7 +78,7 @@ session_start();
             <h1>Hidden Treasures</h1>
         </div>
         <ul>
-        <li><a href="homePage.php">Home</a></li>
+        <li><a href="preHomePage.php">Home</a></li>
         <li style="float:right"><a class="active" href="profile.php">Profile</a></li>
         <li style="float:right"><a class="active" href="posting.php">Post</a></li>
         <li style="float:right"><a class="active" href="#filter">Filter</a></li>
@@ -114,33 +94,6 @@ session_start();
     <a class="one" href="storePage.html"><h3>Goodwill Store & Donation Center</h3></a>
     <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\azzuro.jpg" alt="Azzuro" width="500" height="500">
     <h3>Beautiful skies out today</h3>
-    <hr>
-        <div class="center">
-         
-            <form method = "post">
-                
-                <br>
-                <h1>post comment here </h1>
-                <br>
-                <textarea placeholder="comments"></textarea>
-                <div class = "btn">
-                  <input type="submit" value='Comment' id = "submit">
-                  <h3 id ="submit" onclick="myFunction()"></h3>
-                </div>
-                
-        </form>
-        <script>
-         
-      var comments = document.getElementById("submit");
-      var btn = document.querySelector(".btn");
-      var text = document.querySelector("textarea"); 
-
-      function myFunction(){
-        btn.style.display = "block"; 
-
-      }
-      
-         
-      </script>
+    
     
 </html> 

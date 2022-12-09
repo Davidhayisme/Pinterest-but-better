@@ -1,6 +1,5 @@
 <?php
 session_start();
-print_r($_POST);
 $conn = require __DIR__ . "/connection.php";
 //$username = $_POST["username"];
 //$password = password_hash($_POST["password"], PASSWORD_DEFAULT);
@@ -19,6 +18,7 @@ $passwrd = md5($_POST["password"]);
 $sql = "SELECT * FROM user WHERE password='".$passwrd."' AND username = '".$uname."'";
 $result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result) === 1){
+    $ahh = array("AHHHH", "huh", "imagine");
     $row = mysqli_fetch_assoc($result);
     if($row["username"] === $uname && $row["password"] === $passwrd){
         echo "Logged In!";
@@ -26,7 +26,7 @@ if(mysqli_num_rows($result) === 1){
         $_SESSION["password"] = $row["password"];
         $_SESSION["bio"] = $row["bio"];
         $_SESSION["profile_photo"] = $row["profile_photo"];
-        header("Location: homePage.php");
+        header("Location: preHomePage.php");
         exit();
 
     }

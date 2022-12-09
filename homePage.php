@@ -1,6 +1,11 @@
+
 <?php
 session_start();
+$pho = $_SESSION["photos"];
 print_r($_SESSION);
+if($_SESSION["yea"] == 1){
+    $_SESSION["lmao"] = "worked";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -107,12 +112,21 @@ print_r($_SESSION);
     </style>
     </head>
     <body>
+        <script>
+            console.log("WOWYWOWO");
+            function saveStuff(num){
+                console.log("fankosghpibas");
+                var arr = <?php echo json_encode($pho);?>;
+                <?php $_SESSION["yea"]?> = "AHH";
+                window.location.href = "thepost.php";
+            }
+            </script>
         <!-- create header and navigation tab -->
         <div class="header">
             <h1>Hidden Treasures</h1>
         </div>
         <ul>
-        <li><a href="homePage.php">Home</a></li>
+        <li><a href="preHomePage.php">Home</a></li>
         <li style="float:right"><a class="active" href="profile.php">Profile</a></li>
         <li style="float:right"><a class="active" href="posting.php">Post</a></li>
         <li style="float:right" class="filter">
@@ -125,73 +139,105 @@ print_r($_SESSION);
             </div>
         </li>
         </ul>
-    
-    <!-- Create grid for image gallery-->
     <div class="row"> 
-      
       <div class="column">
-        <a target="_blank" href="postPage.html">
-          <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\Milano.jpg" alt="Milano" style="width:100%">
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "img" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "0">
+        </button>
+        </form>
+        <a target="_blank" href="thepost.php">
+          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
         </a>
-        <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg" alt="Mountains" style="width:100%">
+        <a target="_blank" href="thepost.php">
+          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" onclick = <?php $_SESSION["thepost"] = $pho[2];?>>
         </a>
-        <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg" alt="Ostello" style="width:100%">
-        </a>
-        <a target="_blank" href="postPage.html">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Italian\new york.jpg" alt="NY" style="width:100%">
-        </a>
-        
+        <p id="test1"></p>
+        <script>
+        var src = <?php echo json_encode($pho);?>;
+          for (i = 0; i < Math.round(src.length/4); i++){
+            //console.log("Photos/" + src[i]);
+            //var src = 'C:/Users/audre/OneDrive/College/Year 3/Software Engineering/images/photo' + i + '.jpg';
+
+            console.log(src[i]);
+            document.getElementById("test").src = "Photos/" + src[i];
+            //var newID = "\"" + i + "\"";
+            var newID = "jeff"+i;
+            document.getElementById("test").id = newID;
+          }
+          console.log("WEEE");
+        </script>
       </div>
       <div class="column">
-        <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg" alt="Ostello" style="width:100%">
+        <a onclick = (<?php $_SESSION["thepost"]?> = 3) target="_blank" href="thepost.php">
+          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
         </a>
-        <a target="_blank" href="postPage.html">
-          <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\Milano.jpg" alt="Milano" style="width:100%">
+        <a <?php $_SESSION["thepost"] = $pho[4];?>target="_blank" href="thepost.php">
+          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
         </a>
-        <a target="_blank" href="postPage.html">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Italian\new york.jpg" alt="NY" style="width:100%">
+        <a <?php $_SESSION["thepost"] = $pho[5];?>target="_blank" href="thepost.php">
+          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
         </a>
-        <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg" alt="Mountains" style="width:100%">
-        </a>
-        
+        <p></p>
+        <script>
+            //console.log("why");
+            var src = <?php echo json_encode($pho);?>;
+            console.log(src[1]);
+            console.log(Math.round(src.length/4));
+            for (i = Math.round(src.length/4); i < Math.round(src.length/2); i++) {
+                console.log(src[i]);
+                //var src = 'C:/Users/audre/OneDrive/College/Year 3/Software Engineering/images/photo' + i + '.jpg';
+                document.getElementById("test").src = "Photos/" + src[i];
+                var newID = "\"" + i + "\"";
+                document.getElementById("test").id = newID;
+            }
+        </script>
       </div>
       <div class="column">
-        <a target="_blank" href="postPage.html">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Italian\new york.jpg" alt="NY" style="width:100%">
+        <a <?php $_SESSION["thepost"] = $pho[6];?>target="_blank" href="thepost.php">
+          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
         </a>
-        <a target="_blank" href="postPage.html">
-          <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\Milano.jpg" alt="Milano" style="width:100%">
+        <a <?php $_SESSION["thepost"] = $pho[7];?>target="_blank" href="thepost.php">
+          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
         </a>
-        <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg" alt="Ostello" style="width:100%">
+        <a <?php $_SESSION["thepost"] = $pho[8];?>target="_blank" href="thepost.php">
+          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
         </a>
-        <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg" alt="Mountains" style="width:100%">
-        </a>
-        
-        
+        <p id="test1"></p>
+        <script>
+            var src = <?php echo json_encode($pho);?>;
+            for (i = Math.round(src.length/2); i < Math.round(src.length/2+src.length/4); i++) {
+                document.getElementById("test").src = "Photos/" + src[i];
+                var newID = "\"" + i + "\"";
+                document.getElementById("test").id = newID;
+          }
+        </script>
       </div>
       <div class="column">
-        <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg" alt="Ostello" style="width:100%">
+        <a <?php $_SESSION["thepost"] = $pho[9];?>target="_blank" href="thepost.php">
+          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
         </a>
-        <a target="_blank" href="postPage.html">
-          <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\Milano.jpg" alt="Milano" style="width:100%">
+        <a onclick = <?php $_SESSION["thepost"] = $pho[10];?>target="_blank" href="thepost.php">
+          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
         </a>
-        <a target="_blank" href="postPage.html">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Italian\new york.jpg" alt="NY" style="width:100%">
+        <a target="_blank" href="thepost.php">
+          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
         </a>
-        <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg" alt="Mountains" style="width:100%">
-        </a>
-        
-        
+        <p id="test1"></p>
+        <script>
+            console.log("WAT");
+            //console.log("WDOJANoipf");
+            var src = <?php echo json_encode($pho);?>;
+            console.log(src.length);
+            for (i = Math.round(src.length/2+src.length/4); i < Math.round(src.length); i++) {
+            document.getElementById("test").src = "Photos/" + src[i];
+            var newID = "\"" + i + "\"";
+            document.getElementById("test").id = newID;
+          }
+        </script>
       </div>
     </div>
+        
     
     </body>
     </html>

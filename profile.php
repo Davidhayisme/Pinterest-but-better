@@ -7,6 +7,7 @@ print_r($_SESSION);
     <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">    
         <style>
+        /* Header: Hidden Treasures */
         .header {
             background-color: #57427e;
             text-align: center;
@@ -18,6 +19,8 @@ print_r($_SESSION);
             font-size: 30px;
             font-family: "Sofia", sans-serif;
         }
+        
+        /* Format for links */
         ul {
             list-style-type: none;
             margin: 0;
@@ -48,26 +51,13 @@ print_r($_SESSION);
         .active {
             background-color: #4D5F0F;
         }
+        
+        /* Header format */
         h2 {
             color: black;
             font-size: 25px;
             font-family: Georgia, serif;
         }
-        a1:link {
-            color: black;
-            font-size: 20px;
-            font-family: Georgia, serif;
-            text-decoration: none;
-        }
-        img {
-            width: 200px;
-            height: auto;
-        }   
-        img.one {
-            width: 200px;
-            height: auto;
-            border-radius: 50%;
-        }   
         h3 {
             color: black;
             font-size: 15px;
@@ -83,6 +73,18 @@ print_r($_SESSION);
             font-size: 15px;
             font-family: Georgia, serif;
         }
+        
+        /* image format */
+        img {
+            width: 200px;
+            height: auto;
+        }   
+        img.one {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+        }   
+        
         div1{
             padding-top: 30px;
             padding-left: 30px;
@@ -91,10 +93,8 @@ print_r($_SESSION);
             padding-top: 50px;
             padding-left: 30px;
         }
-        :root {
-            --username: JohnDoe22;
-        }
 
+        /* image gallery */
         div.gallery {
             margin: 20px 10px 10px 10px;
             float: left;
@@ -112,48 +112,54 @@ print_r($_SESSION);
         </style>
     </head>
     <body>
+        <!-- create header and navigation tab -->
         <div class="header">
             <h1>Hidden Treasures</h1>
         </div>
         <ul>
+        <!-- links for the tab -->
         <li><a href="homePage.php">Home</a></li>
         <li style="float:right"><a class="active" href="profile.php">Profile</a></li>
         <li style="float:right"><a class="active" href="posting.php">Post</a></li>
         <li style="float:right"><a class="active" href="#filter">Filter</a></li>
         </ul>
+        
+        <!-- display user information -->
         <div1 class="parent">
             <img class="one" src="ProfPhotos/<?=$_SESSION["profile_photo"]?>" alt="profilePic" width="500" height="500">
             <div1>
-                <p><?php echo $_SESSION["username"];?></p> 
-                <a class="one" href="editProfile.php"><h3>Edit Profile</h3></a>
-                <p><?php echo $_SESSION["bio"];?></p>   
+                <p><?php echo $_SESSION["username"];?></p>  <!-- get username from php -->
+                <a class="one" href="editProfile.php"><h3>Edit Profile</h3></a> <!-- edit profile link -->
+                <p><?php echo $_SESSION["bio"];?></p>   <!-- get bio from php -->
             </div1>
         </div1>
+        <!-- header -->
         <div2 class="parent">
             <h2>Posts</h2>
         </div2>
 
+        <!-- image gallery -->
         <div class="gallery">
-            <a target="_blank" href="postPage.html">
+            <a target="_blank" href="postPage.html">    <!-- link to image -->
               <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\azzuro.jpg" alt="Azzuro" width="800" height="800">
             </a>
             
           </div>
         <div class="gallery">
-            <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\Milano.jpg">
+            <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\Milano.jpg">   <!-- link to image -->
               <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\Milano.jpg" alt="Milano" width="800" height="800">
             </a>
             
           </div>
           
           <div class="gallery">
-            <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg">
+            <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg">  <!-- link to image -->
               <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg" alt="Ostello" width="800" height="800">
             </a>
           </div>
           
           <div class="gallery">
-            <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg">
+            <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg"> <!-- link to image -->
               <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg" alt="Mountains" width="800" height="800">
             </a>
           </div>

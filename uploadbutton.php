@@ -4,6 +4,7 @@
     <title></title>
 </head>
 <body>
+    //general upload for pictures call
     <form action="upload.php" method="POST" enctype = "multipart/form-data">
         <input type = "file" name = "file">
         <button type="submit" name="submit">UPLOAD</button>

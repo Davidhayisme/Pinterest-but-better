@@ -23,6 +23,8 @@ if(mysqli_num_rows($result) === 1){
     header("Location: postPage.php");
 }
 else{
-    print_r($_POST);
+// Points back to the homepage if there isn't a matching
+// row in the database
+    header("Location: homePage.php");
 }
 

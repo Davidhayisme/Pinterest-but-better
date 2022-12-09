@@ -75,21 +75,24 @@ session_start();
         </style>
     </head>
     <body>
+        <!-- create header and navigation tab -->
         <div class="header">
             <h1>Hidden Treasures</h1>
         </div>
         <ul>
+            <!-- links for tabs -->
         <li><a href="preHomePage.php">Home</a></li>
         <li style="float:right"><a class="active" href="profile.php">Profile</a></li>
         <li style="float:right"><a class="active" href="posting.php">Post</a></li>
         </ul>
 
     </body> 
+    <!-- get all information from database/server using php -->
     <a class="one" href="userPage.html"><p id="demo"></p></a>
-    <h1><?php echo $_SESSION["pusername"];?></h1> 
-    <a class="one" href="storePage.html"><h3><?php echo $_SESSION["pstorename"]?></h3></a>
-    <img src="Photos/<?=$_SESSION["pphoto"]?>" alt="Azzuro" width="500" height="500">
-    <h3><?php echo $_SESSION["pcaption"]?></h3>
+    <h1><?php echo $_SESSION["pusername"];?></h1> <!-- display username -->
+    <a class="one" href="storePage.html"><h3><?php echo $_SESSION["pstorename"]?></h3></a>  <!-- display storepage -->
+    <img src="Photos/<?=$_SESSION["pphoto"]?>" alt="Azzuro" width="500" height="500">   <!-- display image -->
+    <h3><?php echo $_SESSION["pcaption"]?></h3> <!-- display caption -->
     
     
 </html> 

@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 $pho = $_SESSION["photos"];
@@ -104,6 +103,8 @@ $pho = $_SESSION["photos"];
             margin-top: 8px;
             vertical-align: middle;
         }
+        
+        /* button format */
         .button{
             border: none;
             background-color: #52554a;
@@ -143,10 +144,13 @@ $pho = $_SESSION["photos"];
             <h1>Hidden Treasures</h1>
         </div>
         <ul>
+        <!-- links for the tabs -->
         <li><a href="preHomePage.php">Home</a></li>
         <li style="float:right"><a class="active" href="profile_posts.php">Profile</a></li>
         <li style="float:right"><a class="active" href="posting.php">Post</a></li>
         <li style="float:right" class="filter">
+        
+            <!-- form for each button in the dropdown, links to the homepage with only the selected aesthetic -->
         <form action = "filterposts.php" method="post">
             <a href="javascript:void(0)" class="dropbtn">Aesthetic</a>
             <div class="filter-content">
@@ -266,10 +270,12 @@ $pho = $_SESSION["photos"];
         </form>
         </li>
         </ul>
-    <div class="row"> 
-      <div class="column">
+
+        <!-- grid of images -->    
+    <div class="row"> <!-- rows across -->
+      <div class="column"> <!-- columns down -->
         <form action="thepost.php" method="post">
-            <button class = "button1">
+            <button class = "button1">  <!-- image as a button to link to postpage -->
           <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
           <input type="hidden" name="photo" value="0">
         </button>
@@ -287,18 +293,18 @@ $pho = $_SESSION["photos"];
         </button>
         </form>
         <p id="test1"></p>
+        <!-- script to loop through images and display in html-->
         <script>
-        var src = <?php echo json_encode($pho);?>;
+        //get the src from php
+        var src = <?php echo json_encode($pho);?>;  
           for (i = 0; i < 3; i++){
-            //console.log("Photos/" + src[i]);
-            //var src = 'C:/Users/audre/OneDrive/College/Year 3/Software Engineering/images/photo' + i + '.jpg';
+            
             if(src[i] != null){
-                    document.getElementById("test").src = "Photos/" + src[i];
+                    document.getElementById("test").src = "Photos/" + src[i];   //change the src of the default image
                 }
                 else{
-                    document.getElementById("test").src = "Default/white.PNG";
+                    document.getElementById("test").src = "Default/white.PNG";  //change the id to access later
                 }
-            //var newID = "\"" + i + "\"";
             var newID = "jeff"+i;
             document.getElementById("test").id = newID;
           }
@@ -326,20 +332,18 @@ $pho = $_SESSION["photos"];
         </form>
         <p></p>
         <script>
-            //console.log("why");
             var src = <?php echo json_encode($pho);?>;
             console.log(src[1]);
             console.log(Math.round(src.length/4));
             for (i = 3; i < 6; i++) {
                 console.log(src[i]);
-                //var src = 'C:/Users/audre/OneDrive/College/Year 3/Software Engineering/images/photo' + i + '.jpg';
+                
                 if(src[i] != null){
                     document.getElementById("test").src = "Photos/" + src[i];
                 }
                 else{
                     document.getElementById("test").src = "Default/white.PNG";
                 }
-                //document.getElementById("test").src = "Photos/" + src[i];
                 var newID = "\"" + i + "\"";
                 document.getElementById("test").id = newID;
             }
@@ -401,7 +405,6 @@ $pho = $_SESSION["photos"];
         <p id="test1"></p>
         <script>
             console.log("WAT");
-            //console.log("WDOJANoipf");
             var src = <?php echo json_encode($pho);?>;
             console.log(src.length);
             for (i = 9; i < 12; i++) {

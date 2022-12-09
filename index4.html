@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">  
+    <style>
+        /* Header: Hidden Treasures */
+        .header {
+            background-color: #57427e;
+            text-align: center;
+            padding: 20px;
+            font-family: "Sofia", sans-serif;
+        }
+        h1 {
+            color: #eeeeee;
+            font-size: 30px;
+            font-family: "Sofia", sans-serif;
+        }
+
+        /* Formating for links */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #4D5F0F;
+            font-family: Georgia, serif;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: block;
+            padding: 8px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-family: Georgia, serif;
+        }
+        
+        li a:hover {
+            background-color: #52554a;
+        }
+        .active {
+            background-color: #4D5F0F;
+        }
+
+        li.filter {
+            display: inline-block;
+        }
+
+        /* Create filter button */
+        .filter-content {
+            display: none;
+            position: absolute;
+            background-color: #52554a;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .filter-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .filter-content a:hover {
+            background-color: #4D5F0F;
+          }
+
+        .filter:hover .filter-content {
+            display: block;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        
+        /* Create the rows for the grid */
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            padding: 0 2px;
+        }
+        
+        /* Create the columns for the grid */
+        .column {
+            -ms-flex: 25%;
+            flex: 25%;
+            padding: 0 6px;
+        }
+
+        .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+        }
+        .center{
+            position: absolute; 
+            top: 50%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+    
+            font-family: "Sofia", sans-serif;
+
+        }
+        .center h1{
+            font-family: "Sofia", sans-serif;
+            position: absolute; 
+             text-align: center;
+             padding: 0 0 30px 0;
+             border-bottom: 2px solid rgb(6, 47, 10);
+   
+
+
+        }
+        .center form{
+            text-align: center;
+             padding: 0 40px;
+             box-sizing: border-box;
+        }
+        .center[type="text"],.center input[type="password"]{
+            font-family: "Sofia", sans-serif;
+            text-align: center;
+            border: 0; 
+            background: none;
+            position: absolute; 
+            margin: 24px;
+            text-align: center;
+            border: 3px solid green;
+            width: 220px;
+            outline: none;
+            border-radius: 30px;
+        }
+
+       .center input[type="submit"]{
+        font-family: "Sofia", sans-serif;
+        width: 280px;
+        border-color: green;
+        border: 0; 
+        background: none;
+        position: center; 
+        margin: 24px;
+        text-align: center;
+        border: 3px solid green;
+        width: 220px;
+        outline: none;
+        border-radius: 30px;
+         }
+        </style>
+    </head>
+    <body>
+        
+
+    </body> 
+    <div class="header">
+            <h1>Hidden Treasures</h1>
+        </div>
+    <div class="center">
+        
+        <form method = "post"> 
+            <label> username</label>
+            <br>
+            <input type="text" id="username">
+           
+            <br>
+            <label>Password</label>
+            <br>
+            <input type="text" id="password">
+            
+            <br>
+     
+      
+      <input type="submit" value="login" id="login">
+      </div>
+      <script>
+        var useC = "john";
+        var passC = "john1234";
+        function checkk(){
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+}
+if (username == "john" && password=="john1234"){
+    alert("success");
+    window.location.href = "homePageTest.html"
+    
+}
+else{
+    alert("fail")
+}
+       
+    </script>
+  
+    
+      </div>
+    
+    </body>
+    
+    </html>
+    
+</html> 

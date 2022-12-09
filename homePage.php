@@ -108,6 +108,9 @@ if($_SESSION["yea"] == 1){
             margin-top: 8px;
             vertical-align: middle;
         }
+        .button{
+            border: none;
+        }
     
     </style>
     </head>
@@ -143,19 +146,26 @@ if($_SESSION["yea"] == 1){
       <div class="column">
         <form action="thepost.php" method="post">
             <button type = submit>
-          <input name = "img" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "0">
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="0">
         </button>
         </form>
-        <a target="_blank" href="thepost.php">
-          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
-        </a>
-        <a target="_blank" href="thepost.php">
-          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" onclick = <?php $_SESSION["thepost"] = $pho[2];?>>
-        </a>
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="1">
+        </button>
+        </form>
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="2">
+        </button>
+        </form>
         <p id="test1"></p>
         <script>
         var src = <?php echo json_encode($pho);?>;
-          for (i = 0; i < Math.round(src.length/4); i++){
+          for (i = 0; i < 3; i++){
             //console.log("Photos/" + src[i]);
             //var src = 'C:/Users/audre/OneDrive/College/Year 3/Software Engineering/images/photo' + i + '.jpg';
 
@@ -169,22 +179,31 @@ if($_SESSION["yea"] == 1){
         </script>
       </div>
       <div class="column">
-        <a onclick = (<?php $_SESSION["thepost"]?> = 3) target="_blank" href="thepost.php">
-          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
-        </a>
-        <a <?php $_SESSION["thepost"] = $pho[4];?>target="_blank" href="thepost.php">
-          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
-        </a>
-        <a <?php $_SESSION["thepost"] = $pho[5];?>target="_blank" href="thepost.php">
-          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
-        </a>
+      <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="3">
+        </button>
+        </form>
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="4">
+        </button>
+        </form>
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="5">
+        </button>
+        </form>
         <p></p>
         <script>
             //console.log("why");
             var src = <?php echo json_encode($pho);?>;
             console.log(src[1]);
             console.log(Math.round(src.length/4));
-            for (i = Math.round(src.length/4); i < Math.round(src.length/2); i++) {
+            for (i = 3; i < 6; i++) {
                 console.log(src[i]);
                 //var src = 'C:/Users/audre/OneDrive/College/Year 3/Software Engineering/images/photo' + i + '.jpg';
                 document.getElementById("test").src = "Photos/" + src[i];
@@ -194,19 +213,28 @@ if($_SESSION["yea"] == 1){
         </script>
       </div>
       <div class="column">
-        <a <?php $_SESSION["thepost"] = $pho[6];?>target="_blank" href="thepost.php">
-          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
-        </a>
-        <a <?php $_SESSION["thepost"] = $pho[7];?>target="_blank" href="thepost.php">
-          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
-        </a>
-        <a <?php $_SESSION["thepost"] = $pho[8];?>target="_blank" href="thepost.php">
-          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
-        </a>
+      <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="6">
+        </button>
+        </form>
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="7">
+        </button>
+        </form>
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="8">
+        </button>
+        </form>
         <p id="test1"></p>
         <script>
             var src = <?php echo json_encode($pho);?>;
-            for (i = Math.round(src.length/2); i < Math.round(src.length/2+src.length/4); i++) {
+            for (i = 6; i < 9; i++) {
                 document.getElementById("test").src = "Photos/" + src[i];
                 var newID = "\"" + i + "\"";
                 document.getElementById("test").id = newID;
@@ -214,22 +242,32 @@ if($_SESSION["yea"] == 1){
         </script>
       </div>
       <div class="column">
-        <a <?php $_SESSION["thepost"] = $pho[9];?>target="_blank" href="thepost.php">
-          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
-        </a>
-        <a onclick = <?php $_SESSION["thepost"] = $pho[10];?>target="_blank" href="thepost.php">
-          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
-        </a>
-        <a target="_blank" href="thepost.php">
-          <img id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%">
-        </a>
+      <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="9">
+        </button>
+        </form>
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="10">
+        </button>
+        </form>
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="11">
+        </button>
+        </form>
         <p id="test1"></p>
         <script>
             console.log("WAT");
             //console.log("WDOJANoipf");
             var src = <?php echo json_encode($pho);?>;
             console.log(src.length);
-            for (i = Math.round(src.length/2+src.length/4); i < Math.round(src.length); i++) {
+            for (i = 9; i < 12; i++) {
+
             document.getElementById("test").src = "Photos/" + src[i];
             var newID = "\"" + i + "\"";
             document.getElementById("test").id = newID;

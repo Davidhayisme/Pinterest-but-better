@@ -104,7 +104,6 @@ print_r($_SESSION);
         <h1>Hidden Treasures</h1>
     </div>
     <ul>
-    <!-- link each tab to another part of the webpage -->
     <li><a href="preHomePage.php">Home</a></li>
     <li style="float:right"><a class="active" href="profile.php">Profile</a></li>
     <li style="float:right"><a class="active" href="posting.php">Post</a></li>

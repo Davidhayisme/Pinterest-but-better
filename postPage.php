@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,7 +88,6 @@ session_start();
             <h1>Hidden Treasures</h1>
         </div>
         <ul>
-        <!-- links for the tabs -->
         <li><a href="preHomePage.php">Home</a></li>
         <li style="float:right"><a class="active" href="profile.php">Profile</a></li>
         <li style="float:right"><a class="active" href="posting.php">Post</a></li>
@@ -97,18 +97,10 @@ session_start();
     </body> 
     <!-- username variable -->
     <a class="one" href="userPage.html"><p id="demo"></p></a>
-    
-    <script>
-        let username = "<h2>JohnDoe22</h2>";
-        document.getElementById("demo").innerHTML = username;
-    </script>  
-    
-    <!-- store name -->
-    <a class="one" href="storePage.html"><h3>Goodwill Store & Donation Center</h3></a>
-   
-    <!-- display image -->
-    <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\azzuro.jpg" alt="Azzuro" width="500" height="500">
-    <h3>Beautiful skies out today</h3>
+    <h1><?php echo $_SESSION["pusername"];?><h1> 
+    <a class="one" href="storePage.html"><h3><?php echo $_SESSION["pstorename"]?></h3></a>
+    <img src="Photos/<?=$_SESSION["pphoto"]?>" alt="Azzuro" width="500" height="500">
+    <h3><?php echo $_SESSION["pcaption"]?></h3>
     
     
 </html> 

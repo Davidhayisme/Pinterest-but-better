@@ -1,6 +1,11 @@
+
 <?php
 session_start();
+$pho = $_SESSION["photos"];
 print_r($_SESSION);
+if($_SESSION["yea"] == 1){
+    $_SESSION["lmao"] = "worked";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -103,16 +108,28 @@ print_r($_SESSION);
             margin-top: 8px;
             vertical-align: middle;
         }
+        .button{
+            border: none;
+        }
     
     </style>
     </head>
     <body>
+        <script>
+            console.log("WOWYWOWO");
+            function saveStuff(num){
+                console.log("fankosghpibas");
+                var arr = <?php echo json_encode($pho);?>;
+                <?php $_SESSION["yea"]?> = "AHH";
+                window.location.href = "thepost.php";
+            }
+            </script>
         <!-- create header and navigation tab -->
         <div class="header">
             <h1>Hidden Treasures</h1>
         </div>
         <ul>
-        <li><a href="homePage.php">Home</a></li>
+        <li><a href="preHomePage.php">Home</a></li>
         <li style="float:right"><a class="active" href="profile.php">Profile</a></li>
         <li style="float:right"><a class="active" href="posting.php">Post</a></li>
         <li style="float:right" class="filter">
@@ -125,73 +142,139 @@ print_r($_SESSION);
             </div>
         </li>
         </ul>
-    
-    <!-- Create grid for image gallery-->
     <div class="row"> 
-      
       <div class="column">
-        <a target="_blank" href="postPage.html">
-          <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\Milano.jpg" alt="Milano" style="width:100%">
-        </a>
-        <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg" alt="Mountains" style="width:100%">
-        </a>
-        <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg" alt="Ostello" style="width:100%">
-        </a>
-        <a target="_blank" href="postPage.html">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Italian\new york.jpg" alt="NY" style="width:100%">
-        </a>
-        
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="0">
+        </button>
+        </form>
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="1">
+        </button>
+        </form>
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="2">
+        </button>
+        </form>
+        <p id="test1"></p>
+        <script>
+        var src = <?php echo json_encode($pho);?>;
+          for (i = 0; i < 3; i++){
+            //console.log("Photos/" + src[i]);
+            //var src = 'C:/Users/audre/OneDrive/College/Year 3/Software Engineering/images/photo' + i + '.jpg';
+
+            console.log(src[i]);
+            document.getElementById("test").src = "Photos/" + src[i];
+            //var newID = "\"" + i + "\"";
+            var newID = "jeff"+i;
+            document.getElementById("test").id = newID;
+          }
+          console.log("WEEE");
+        </script>
       </div>
       <div class="column">
-        <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg" alt="Ostello" style="width:100%">
-        </a>
-        <a target="_blank" href="postPage.html">
-          <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\Milano.jpg" alt="Milano" style="width:100%">
-        </a>
-        <a target="_blank" href="postPage.html">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Italian\new york.jpg" alt="NY" style="width:100%">
-        </a>
-        <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg" alt="Mountains" style="width:100%">
-        </a>
-        
+      <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="3">
+        </button>
+        </form>
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="4">
+        </button>
+        </form>
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="5">
+        </button>
+        </form>
+        <p></p>
+        <script>
+            //console.log("why");
+            var src = <?php echo json_encode($pho);?>;
+            console.log(src[1]);
+            console.log(Math.round(src.length/4));
+            for (i = 3; i < 6; i++) {
+                console.log(src[i]);
+                //var src = 'C:/Users/audre/OneDrive/College/Year 3/Software Engineering/images/photo' + i + '.jpg';
+                document.getElementById("test").src = "Photos/" + src[i];
+                var newID = "\"" + i + "\"";
+                document.getElementById("test").id = newID;
+            }
+        </script>
       </div>
       <div class="column">
-        <a target="_blank" href="postPage.html">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Italian\new york.jpg" alt="NY" style="width:100%">
-        </a>
-        <a target="_blank" href="postPage.html">
-          <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\Milano.jpg" alt="Milano" style="width:100%">
-        </a>
-        <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg" alt="Ostello" style="width:100%">
-        </a>
-        <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg" alt="Mountains" style="width:100%">
-        </a>
-        
-        
+      <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="6">
+        </button>
+        </form>
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="7">
+        </button>
+        </form>
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="8">
+        </button>
+        </form>
+        <p id="test1"></p>
+        <script>
+            var src = <?php echo json_encode($pho);?>;
+            for (i = 6; i < 9; i++) {
+                document.getElementById("test").src = "Photos/" + src[i];
+                var newID = "\"" + i + "\"";
+                document.getElementById("test").id = newID;
+          }
+        </script>
       </div>
       <div class="column">
-        <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\ostello.jpg" alt="Ostello" style="width:100%">
-        </a>
-        <a target="_blank" href="postPage.html">
-          <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\Milano.jpg" alt="Milano" style="width:100%">
-        </a>
-        <a target="_blank" href="postPage.html">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Italian\new york.jpg" alt="NY" style="width:100%">
-        </a>
-        <a target="_blank" href="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg">
-            <img src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\LaChiesa.jpg" alt="Mountains" style="width:100%">
-        </a>
-        
-        
+      <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="9">
+        </button>
+        </form>
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="10">
+        </button>
+        </form>
+        <form action="thepost.php" method="post">
+            <button type = submit>
+          <input name = "ahhh" type = "image" id="test" src="C:\Users\audre\OneDrive\College\Year 3\Software Engineering\images\photo4.jpg" alt="alternatetext" style="width:100%" value = "imagine">
+          <input type="hidden" name="photo" value="11">
+        </button>
+        </form>
+        <p id="test1"></p>
+        <script>
+            console.log("WAT");
+            //console.log("WDOJANoipf");
+            var src = <?php echo json_encode($pho);?>;
+            console.log(src.length);
+            for (i = 9; i < 12; i++) {
+            document.getElementById("test").src = "Photos/" + src[i];
+            var newID = "\"" + i + "\"";
+            document.getElementById("test").id = newID;
+          }
+        </script>
       </div>
     </div>
+        
     
     </body>
     </html>

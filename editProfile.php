@@ -125,9 +125,9 @@ print_r($_SESSION);
         <h1>Hidden Treasures</h1>
     </div>
     <ul>
-    <li><a href="homePage.php">Home</a></li>
-    <li style="float:right"><a class="active" href="#profile">Profile</a></li>
-    <li style="float:right"><a class="active" href="posting.html">Post</a></li>
+    <li><a href="preHomePage.php">Home</a></li>
+    <li style="float:right"><a class="active" href="profile.php">Profile</a></li>
+    <li style="float:right"><a class="active" href="posting.php">Post</a></li>
     <li style="float:right"><a class="active" href="#filter">Filter</a></li>
     </ul>
 

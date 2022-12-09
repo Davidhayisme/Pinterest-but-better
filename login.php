@@ -1,6 +1,5 @@
 <?php
 session_start();
-print_r($_POST);
 $conn = require __DIR__ . "/connection.php";
 //$username = $_POST["username"];
 //$password = password_hash($_POST["password"], PASSWORD_DEFAULT);
@@ -26,7 +25,7 @@ if(mysqli_num_rows($result) === 1){
         $_SESSION["password"] = $row["password"];
         $_SESSION["bio"] = $row["bio"];
         $_SESSION["profile_photo"] = $row["profile_photo"];
-        header("Location: homePage.php");
+        header("Location: preHomePage.php");
         exit();
 
     }

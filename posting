@@ -93,7 +93,7 @@
             height: auto;
         }
         
-        #display_image{
+        #IDisplay{
         width: 300px;
         height: 195px;
         background-position: center;
@@ -161,8 +161,8 @@
     <form action="posts.php" method = "post">
         <div class="column">
             <label for="image">Image:</label>
-            <input type="file" id="image_input" accept="image/jpeg, image/png, image/jpg">
-            <div id="display_image"></div>
+            <input type="file" id="image" accept="image/jpeg, image/png, image/jpg">
+            <div id="IDisplay"></div>
             <label for="caption">Caption:</label>
             <input type="text" id="caption" name="caption"><br><br>
             <label for="sname">Store Name:</label>
@@ -200,14 +200,22 @@
     </form>
 
     <script>
-        const image_input = document.querySelector("#image_input");
-
-        image_input.addEventListener("change", function() {
+        <!-- The image being uploaded by the user is converted into a format that is displayable.
+                It is stored in the imageUpload variable and initializes the styple for CSS use. -->
+        <!-- Returns first elm in doc matching selector wanted-->
+        const image = document.querySelector("#image");
+        <!--event listener waits for the event to occur-->
+        image.addEventListener("change", function() {
+        <!--reads file-->
         const file_reader = new FileReader();
+        <!--waits to load file in-->
         file_reader.addEventListener("load", () => {
-            const uploaded_image = file_reader.result;
-            document.querySelector("#display_image").style.backgroundImage = `url(${uploaded_image})`;
+            <!--event listener waits for the event to occur-->
+            const imageUpload = file_reader.result;
+            <!--Returns value from the file reader that has already been triggered by an event-->
+            document.querySelector("#IDisplay").style.backgroundImage = `url(${imageUpload})`;
         });
+        <!-Reads file for upload through file object at the first position in array-->
         file_reader.readAsDataURL(this.files[0]);
         });
     </script>

@@ -146,7 +146,7 @@ $pho = $_SESSION["photos"];
         <ul>
         <!-- links for the tabs -->
         <li><a href="preHomePage.php">Home</a></li>
-        <li style="float:right"><a class="active" href="contactUs.html">Conntact US</a></li>
+        <li style="float:right"><a class="active" href="contactUs.php">Conntact US</a></li>
         <li style="float:right"><a class="active" href="profile_posts.php">Profile</a></li>
         <li style="float:right"><a class="active" href="posting.php">Post</a></li>
         <li style="float:right" class="filter">
